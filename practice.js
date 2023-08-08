@@ -753,7 +753,7 @@ console.log(total);
 
 // }
 
-
+// {
 
 //     function lion() {
 //         document.querySelector('#animals').src = "pictures/lion.jpg";
@@ -770,46 +770,106 @@ console.log(total);
 //     function leopard() {
 //         document.getElementById('animals').src = "pictures/leopard.jpg"
 //     }
+// }
+
+
+    // CALCULATOR
 
 let num1 = document.getElementById('num1');
 let num2 = document.getElementById('num2');
+let add = document.querySelector('.add');
+let minus = document.querySelector('.minus');
+let multiply = document.querySelector('.multiply');
+let divide = document.querySelector('.divide');
+let result = document.querySelector('.result');
 
-function add() {
+
+add.addEventListener( 'click', function () {
     let value1 = Number(num1.value);
     let value2  = Number(num2.value);
     let total = value1 + value2;
-    console.log(total);
+    result.value = total;
     num1.value = "";
     num2.value = "";
+})
 
-}
-
-function minus() {
+minus.addEventListener( 'click', function () {
     let value1 = Number(num1.value);
     let value2  = Number(num2.value);
     let total = value1 - value2;
-    console.log(total);
+    result.value = total;
     num1.value = "";
     num2.value = "";
- 
-}
+})
 
-function multiply() {
+multiply.addEventListener( 'click', function () {
     let value1 = Number(num1.value);
     let value2  = Number(num2.value);
     let total = value1 * value2;
-    console.log(total);
+    result.value = total;
     num1.value = "";
     num2.value = "";
+})
 
-}
-
-function divide() {
+divide.addEventListener( 'click', function () {
     let value1 = Number(num1.value);
     let value2  = Number(num2.value);
     let total = value1 / value2;
-    console.log(total);
+    result.value = total;
     num1.value = "";
     num2.value = "";
+})
 
+{
+    let stat = [23, 42, 88, 30, 50, 65, 30];
+    let total = 0;
+
+    const mean = function (n) {
+        for (let i = 0; i < n.length; i++) {
+             total += n[i];
+        }
+        return total /stat.length
+    }
+    console.log(mean(stat));
+
+
+    function median(n) {
+        const sortedn = n.sort((a, b) => a - b);
+        console.log(sortedn);
+        const middleIndex = Math.floor(sortedn.length / 2);
+        
+        if (sortedn.length % 2 === 0) {
+            return (sortedn[middleIndex - 1] + sortedn[middleIndex]) / 2;
+        } else {
+            return sortedn[middleIndex];
+        }
+    }
+        console.log(median(stat));
+
+    
+        function calculateMode(numbers) {
+            if (numbers.length === 0) {
+              return null;
+            }
+          
+            const frequencyMap = new Map();
+            let maxFrequency = 0;
+            let mode = null;
+          
+            numbers.forEach((num) => {
+              if (!frequencyMap.has(num)) {
+                frequencyMap.set(num, 1);
+              } else {
+                const currentFrequency = frequencyMap.get(num) + 1;
+                frequencyMap.set(num, currentFrequency);
+                if (currentFrequency > maxFrequency) {
+                  maxFrequency = currentFrequency;
+                  mode = num;
+                }
+              }
+            });
+          
+            return mode;
+          }
+          console.log(calculateMode(stat));
 }

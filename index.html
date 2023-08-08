@@ -58,6 +58,15 @@
         margin: 5px;
       }
 
+      .result {
+        width: 150px;
+        height: 50px;
+        border: 1px solid;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
       
     </style>
 </head>
@@ -80,11 +89,15 @@
 
   
     <input type="text" id="num1" class="num">
-    <input type="text" id="num2" class="num"/><br><br><br>
-    <a href="#"  onclick="add()">+</a>
-    <a href="#"  onclick="minus()">-</a>
-    <a href="#"  onclick="multiply()">x</a>
-    <a href="#"  onclick="divide()">/</a>
+    <input type="text" id="num2" class="num"/>
+    <input type="text" placeholder="result" id="result" class="result"/>
+
+    <br><br>
+    <a href="#"  class="add">+</a>
+    <a href="#"  class="minus">-</a>
+    <a href="#"  class="multiply">x</a>
+    <a href="#"  class="divide">/</a>
+
     
 
 
